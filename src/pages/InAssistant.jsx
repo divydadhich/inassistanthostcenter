@@ -4,77 +4,139 @@ export default function InAssistant() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-white flex justify-center">
-      <div className="w-full max-w-[390px] p-4">
-      <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
-  <button
-    onClick={() => navigate(-1)}
-    className="text-2xl font-semibold"
-  >
-    &lt;
-  </button>
+    <div className="min-h-screen w-full bg-white overflow-x-hidden">
 
-  <h1 className="text-lg font-semibold">Host Center</h1>
+      {/* HEADER – FULL WIDTH */}
+      <header className="bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white pt-[env(safe-area-inset-top)]">
+        <div className="mx-auto max-w-[390px] h-14 flex items-center justify-between px-4">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-xl font-semibold shrink-0"
+          >
+            &lt;
+          </button>
 
-  <button
-    onClick={() => navigate(-1)}
-    className="text-2xl"
-  >
-    ✕
-  </button>
-</div>
-  
+          <h1 className="text-base font-semibold truncate">
+            Host Center
+          </h1>
 
-        {/* Profile Card */}
-        <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-4 flex gap-4 mt-4 items-center shadow-lg">
-          <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-2xl">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-xl shrink-0"
+          >
+            ✕
+          </button>
+        </div>
+      </header>
+
+      {/* CONTENT */}
+      <main className="mx-auto max-w-[390px] px-4 py-4">
+
+        {/* PROFILE CARD */}
+        <div className="
+          bg-white/70
+          backdrop-blur-xl
+          rounded-2xl
+          p-4
+          flex
+          gap-3
+          items-center
+          shadow-lg
+        ">
+          {/* Avatar */}
+          <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center text-xl shrink-0">
             👤
           </div>
-          <div>
-            <h2 className="text-xl font-bold text-gray-800">IN-Assistant</h2>
-            <p className="text-sm text-gray-600">ID: 2482036</p>
-            <p className="text-sm text-gray-600">Your Agency ID: 2480459</p>
+
+          {/* Text */}
+          <div className="min-w-0">
+            <h2 className="text-base font-bold text-gray-800 truncate">
+              IN-Assistant
+            </h2>
+            <p className="text-xs text-gray-600 truncate">
+              ID: 2482036
+            </p>
+            <p className="text-xs text-gray-600 truncate">
+              Your Agency ID: 2480459
+            </p>
           </div>
         </div>
 
-        {/* Buttons Grid */}
-        <div className="grid grid-cols-2 gap-4 mt-8">
+        {/* BUTTONS GRID */}
+        <div className="grid grid-cols-2 gap-3 mt-6">
 
           {/* Balance */}
           <button
             onClick={() => navigate("/balance")}
-            className="bg-white/50 backdrop-blur-xl rounded-2xl p-4 flex items-center gap-3 shadow-lg"
+            className="
+              bg-white/70
+              backdrop-blur-xl
+              rounded-2xl
+              p-3
+              flex
+              items-center
+              gap-3
+              shadow-lg
+              active:scale-95
+            "
           >
-            <div className="w-12 h-12 rounded-xl bg-yellow-400 flex items-center justify-center text-white text-xl">
+            <div className="w-10 h-10 rounded-xl bg-yellow-400 flex items-center justify-center text-white text-lg shrink-0">
               💳
             </div>
-            <span className="font-semibold text-gray-800">Balance</span>
+            <span className="text-sm font-semibold text-gray-800 truncate">
+              Balance
+            </span>
           </button>
 
           {/* My Work */}
           <button
             onClick={() => navigate("/work")}
-            className="bg-white/50 backdrop-blur-xl rounded-2xl p-4 flex items-center gap-3 shadow-lg"
+            className="
+              bg-white/70
+              backdrop-blur-xl
+              rounded-2xl
+              p-3
+              flex
+              items-center
+              gap-3
+              shadow-lg
+              active:scale-95
+            "
           >
-            <div className="w-12 h-12 rounded-xl bg-blue-500 flex items-center justify-center text-white text-xl">
+            <div className="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center text-white text-lg shrink-0">
               📊
             </div>
-            <span className="font-semibold text-gray-800">My Work</span>
+            <span className="text-sm font-semibold text-gray-800 truncate">
+              My Work
+            </span>
           </button>
 
-          {/* Policy */}
+          {/* Policy – FULL WIDTH */}
           <button
             onClick={() => navigate("/policy")}
-            className="bg-white/50 backdrop-blur-xl rounded-2xl p-4 flex items-center gap-3 shadow-lg col-span-2"
+            className="
+              col-span-2
+              bg-white/70
+              backdrop-blur-xl
+              rounded-2xl
+              p-3
+              flex
+              items-center
+              gap-3
+              shadow-lg
+              active:scale-95
+            "
           >
-            <div className="w-12 h-12 rounded-xl bg-green-400 flex items-center justify-center text-white text-xl">
+            <div className="w-10 h-10 rounded-xl bg-green-400 flex items-center justify-center text-white text-lg shrink-0">
               📄
             </div>
-            <span className="font-semibold text-gray-800">Policy</span>
+            <span className="text-sm font-semibold text-gray-800 truncate">
+              Policy
+            </span>
           </button>
 
         </div>
-      </div>
+      </main>
     </div>
   );
 }

@@ -32,67 +32,86 @@ export default function Policy() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#eef2ff] flex justify-center">
-      <div className="w-full max-w-[390px]">
+    <div className="min-h-screen w-full bg-[#eef2ff] overflow-x-hidden">
 
-      <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
-  <button
-    onClick={() => navigate(-1)}
-    className="text-2xl font-semibold"
-  >
-    &lt;
-  </button>
+      {/* HEADER – FULL WIDTH + SAFE AREA */}
+      <header className="bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white pt-[env(safe-area-inset-top)]">
+        <div className="mx-auto max-w-[390px] h-14 flex items-center justify-between px-4">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-xl font-semibold shrink-0"
+          >
+            &lt;
+          </button>
 
-  <h1 className="text-lg font-semibold">Policy</h1>
+          <h1 className="text-base font-semibold truncate">
+            Policy
+          </h1>
 
-  <button
-    onClick={() => navigate(-1)}
-    className="text-2xl"
-  >
-    ✕
-  </button>
-</div>
+          <button
+            onClick={() => navigate(-1)}
+            className="text-xl shrink-0"
+          >
+            ✕
+          </button>
+        </div>
+      </header>
 
-        {/* LEVEL LIST */}
-        <div className="px-4 py-4 space-y-6">
-          {policyLevels.map((item) => (
-            <div key={item.level}>
-              {/* LEVEL TITLE */}
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-1.5 h-5 rounded bg-purple-600"></div>
-                <h2 className="font-semibold text-gray-800">
-                  LEVEL:{item.level}
-                </h2>
+      {/* CONTENT */}
+      <main className="mx-auto max-w-[390px] px-4 py-4 space-y-6">
+
+        {policyLevels.map((item) => (
+          <div key={item.level}>
+            {/* LEVEL TITLE */}
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-1.5 h-5 rounded bg-purple-600 shrink-0" />
+              <h2 className="text-sm font-semibold text-gray-800">
+                LEVEL: {item.level}
+              </h2>
+            </div>
+
+            {/* CARD */}
+            <div className="
+              bg-blue-50
+              rounded-2xl
+              px-3
+              py-3
+              grid
+              grid-cols-3
+              text-center
+              shadow-sm
+            ">
+              <div>
+                <p className="text-[11px] sm:text-xs text-gray-600">
+                  Time (Hours)
+                </p>
+                <p className="mt-1 text-emerald-500 text-sm font-semibold">
+                  {item.time}
+                </p>
               </div>
 
-              {/* CARD */}
-              <div className="bg-blue-50 rounded-2xl px-4 py-3 grid grid-cols-3 text-center text-sm shadow-sm">
-                <div>
-                  <p className="text-gray-600">Time(Hours)</p>
-                  <p className="mt-1 text-emerald-500 font-semibold">
-                    {item.time}
-                  </p>
-                </div>
+              <div>
+                <p className="text-[11px] sm:text-xs text-gray-600">
+                  Target (Gift)
+                </p>
+                <p className="mt-1 text-blue-600 text-sm font-semibold">
+                  {item.target.toLocaleString()}
+                </p>
+              </div>
 
-                <div>
-                  <p className="text-gray-600">Target(Gift Value)</p>
-                  <p className="mt-1 text-blue-600 font-semibold">
-                    {item.target.toLocaleString()}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-gray-600">Host(Salary)</p>
-                  <p className="mt-1 text-orange-500 font-semibold">
-                    {item.salary}
-                  </p>
-                </div>
+              <div>
+                <p className="text-[11px] sm:text-xs text-gray-600">
+                  Host Salary
+                </p>
+                <p className="mt-1 text-orange-500 text-sm font-semibold">
+                  {item.salary}
+                </p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
 
-      </div>
+      </main>
     </div>
   );
 }

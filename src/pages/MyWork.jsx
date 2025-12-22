@@ -42,94 +42,96 @@ export default function MyWork() {
   const [openSheet, setOpenSheet] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#eef2ff] flex justify-center">
-      <div className="w-full max-w-[390px]">
+    <div className="min-h-screen w-full bg-[#eef2ff] overflow-x-hidden">
 
-      <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
-  <button
-    onClick={() => navigate(-1)}
-    className="text-2xl font-semibold"
-  >
-    &lt;
-  </button>
+      {/* HEADER – FULL WIDTH + SAFE AREA */}
+      <header className="bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white pt-[env(safe-area-inset-top)]">
+        <div className="mx-auto max-w-[390px] h-14 flex items-center justify-between px-4">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-xl font-semibold shrink-0"
+          >
+            &lt;
+          </button>
 
-  <h1 className="text-lg font-semibold">My Work</h1>
+          <h1 className="text-base font-semibold truncate">
+            My Work
+          </h1>
 
-  <button
-    onClick={() => navigate(-1)}
-    className="text-2xl"
-  >
-    ✕
-  </button>
-</div>
-
-
-        {/* WORK LIST */}
-        <div className="px-4 py-4 space-y-4">
-          {workData.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-4 shadow-md"
-            >
-              {/* TOP */}
-              <div className="flex items-center justify-between mb-3">
-                <p className="text-blue-500 font-semibold">
-                  {item.month}
-                </p>
-                <span className="px-3 py-1 text-sm rounded-full bg-emerald-500 text-white">
-                  {item.status}
-                </span>
-              </div>
-
-              {/* DETAILS */}
-              <div className="grid grid-cols-2 gap-y-3 text-sm">
-                <p className="text-gray-600">
-                  Target:
-                  <span className="ml-2 text-blue-500 font-semibold">
-                    {item.target}
-                  </span>
-                </p>
-
-                <p className="text-gray-600 text-right">
-                  Duration:
-                  <span className="ml-2 text-purple-500 font-semibold">
-                    {item.duration}
-                  </span>
-                </p>
-
-                <p className="text-gray-600">
-                  Target LV:
-                  <span className="ml-2 text-orange-500 font-semibold">
-                    {item.targetLv}
-                  </span>
-                </p>
-
-                <p className="text-gray-600 text-right">
-                  Salary:
-                  <span className="ml-2 text-orange-500 font-semibold">
-                    {item.salary}
-                  </span>
-                </p>
-              </div>
-
-              {/* SEE MORE */}
-              <button
-                onClick={() => setOpenSheet(true)}
-                className="mt-4 w-full text-center text-blue-500 text-sm font-medium"
-              >
-                See more details&gt;&gt;
-              </button>
-            </div>
-          ))}
+          <button
+            onClick={() => navigate(-1)}
+            className="text-xl shrink-0"
+          >
+            ✕
+          </button>
         </div>
+      </header>
 
-        {/* BOTTOM POPUP */}
-        <WorkDetailsSheet
-          open={openSheet}
-          onClose={() => setOpenSheet(false)}
-        />
+      {/* CONTENT */}
+      <main className="mx-auto max-w-[390px] px-4 py-4 space-y-4">
 
-      </div>
+        {workData.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-2xl p-4 shadow-md"
+          >
+            {/* TOP */}
+            <div className="flex items-center justify-between mb-3">
+              <p className="text-blue-500 font-semibold text-sm">
+                {item.month}
+              </p>
+              <span className="px-3 py-1 text-xs sm:text-sm rounded-full bg-emerald-500 text-white">
+                {item.status}
+              </span>
+            </div>
+
+            {/* DETAILS */}
+            <div className="grid grid-cols-2 gap-y-3 text-xs sm:text-sm">
+              <p className="text-gray-600">
+                Target:
+                <span className="ml-2 text-blue-500 font-semibold">
+                  {item.target}
+                </span>
+              </p>
+
+              <p className="text-gray-600 text-right">
+                Duration:
+                <span className="ml-2 text-purple-500 font-semibold">
+                  {item.duration}
+                </span>
+              </p>
+
+              <p className="text-gray-600">
+                Target LV:
+                <span className="ml-2 text-orange-500 font-semibold">
+                  {item.targetLv}
+                </span>
+              </p>
+
+              <p className="text-gray-600 text-right">
+                Salary:
+                <span className="ml-2 text-orange-500 font-semibold">
+                  {item.salary}
+                </span>
+              </p>
+            </div>
+
+            {/* SEE MORE */}
+            <button
+              onClick={() => setOpenSheet(true)}
+              className="mt-4 w-full text-center text-blue-500 text-xs sm:text-sm font-medium active:scale-95"
+            >
+              See more details &gt;&gt;
+            </button>
+          </div>
+        ))}
+      </main>
+
+      {/* BOTTOM SHEET */}
+      <WorkDetailsSheet
+        open={openSheet}
+        onClose={() => setOpenSheet(false)}
+      />
     </div>
   );
 }
