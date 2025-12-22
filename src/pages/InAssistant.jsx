@@ -4,7 +4,7 @@ export default function InAssistant() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 via-purple-400 to-pink-300 flex justify-center">
+    <div className="min-h-screen bg-white flex justify-center">
       <div className="w-full max-w-[390px] p-4">
 
         {/* Profile Card */}
