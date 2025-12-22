@@ -7,16 +7,24 @@ export default function Balance() {
     <div className="min-h-screen bg-[#f5f6fa] flex justify-center">
       <div className="w-full max-w-[390px] px-4 pb-10">
 
-        {/* HEADER */}
-        <div className="h-14 flex items-center gap-3">
-          <button
-            onClick={() => navigate(-1)}
-            className="text-2xl font-semibold"
-          >
-            ←
-          </button>
-          <h1 className="text-lg font-semibold">Balance</h1>
-        </div>
+      <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl font-semibold"
+  > 
+    &lt;
+  </button>
+
+  <h1 className="text-lg font-semibold">Balance</h1>
+
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl"
+  >
+    ✕
+  </button>
+</div>
+
 
         {/* BALANCE CARD */}
         <div className="mt-4 bg-gradient-to-r from-[#7b5cff] to-[#6a6cff] rounded-2xl p-6 text-white shadow-lg">

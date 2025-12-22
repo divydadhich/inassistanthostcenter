@@ -35,16 +35,23 @@ export default function Policy() {
     <div className="min-h-screen bg-[#eef2ff] flex justify-center">
       <div className="w-full max-w-[390px]">
 
-        {/* HEADER */}
-        <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
-          <button onClick={() => navigate(-1)} className="text-2xl">
-            ←
-          </button>
-          <h1 className="text-lg font-semibold">Platform Policy</h1>
-          <button onClick={() => navigate(-1)} className="text-2xl">
-            ✕
-          </button>
-        </div>
+      <div className="h-14 px-4 flex items-center justify-between bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white">
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl font-semibold"
+  >
+    &lt;
+  </button>
+
+  <h1 className="text-lg font-semibold">Policy</h1>
+
+  <button
+    onClick={() => navigate(-1)}
+    className="text-2xl"
+  >
+    ✕
+  </button>
+</div>
 
         {/* LEVEL LIST */}
         <div className="px-4 py-4 space-y-6">
