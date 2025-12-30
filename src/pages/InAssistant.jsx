@@ -7,8 +7,8 @@ export default function InAssistant() {
     <div className="min-h-screen w-full bg-white overflow-x-hidden">
 
       {/* HEADER – FULL WIDTH */}
-      <header className="bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white pt-[env(safe-area-inset-top)]">
-        <div className="mx-auto max-w-[390px] h-14 flex items-center justify-between px-4">
+      <header className="bg-linear-to-b from-[#161a3a] to-[#1e2352] text-white pt-[env(safe-area-inset-top)]">
+        <div className="mx-auto max-w-97.5 h-14 flex items-center justify-between px-4">
           <button
             onClick={() => navigate(-1)}
             className="text-xl font-semibold shrink-0"
@@ -30,7 +30,7 @@ export default function InAssistant() {
       </header>
 
       {/* CONTENT */}
-      <main className="mx-auto max-w-[390px] px-4 py-4">
+      <main className="mx-auto max-w-97.5 px-4 py-4">
 
         {/* PROFILE CARD */}
         <div className="

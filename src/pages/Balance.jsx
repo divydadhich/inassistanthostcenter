@@ -7,8 +7,8 @@ export default function Balance() {
     <div className="min-h-screen w-full bg-[#f5f6fa] overflow-x-hidden">
 
       {/* HEADER – FULL WIDTH + SAFE AREA */}
-      <header className="bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white pt-[env(safe-area-inset-top)]">
-        <div className="mx-auto max-w-[390px] h-14 flex items-center justify-between px-4">
+      <header className="bg-linear-to-b from-[#161a3a] to-[#1e2352] text-white pt-[env(safe-area-inset-top)]">
+        <div className="mx-auto max-w-97.5 h-14 flex items-center justify-between px-4">
           <button
             onClick={() => navigate(-1)}
             className="text-xl font-semibold shrink-0"
@@ -30,10 +30,10 @@ export default function Balance() {
       </header>
 
       {/* CONTENT */}
-      <main className="mx-auto max-w-[390px] px-4 pb-10">
+      <main className="mx-auto max-w-97.5 px-4 pb-10">
 
         {/* BALANCE CARD */}
-        <div className="mt-4 bg-gradient-to-r from-[#7b5cff] to-[#6a6cff] rounded-2xl p-4 sm:p-6 text-white shadow-lg">
+        <div className="mt-4 bg-linear-to-r from-[#7b5cff] to-[#6a6cff] rounded-2xl p-4 sm:p-6 text-white shadow-lg">
           <h2 className="text-3xl sm:text-4xl font-bold">$0</h2>
           <p className="mt-2 text-white/80 text-xs sm:text-sm">
             Wallet Balance · USD
