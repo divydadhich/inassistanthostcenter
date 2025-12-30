@@ -32,7 +32,7 @@ export default function Policy() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen w-full bg-[#eef2ff] overflow-x-hidden">
+    <div className="min-h-screen w-full bg-white overflow-x-hidden">
 
       {/* HEADER – FULL WIDTH + SAFE AREA */}
       <header className="bg-gradient-to-b from-[#161a3a] to-[#1e2352] text-white pt-[env(safe-area-inset-top)]">
@@ -57,61 +57,63 @@ export default function Policy() {
         </div>
       </header>
 
-      {/* CONTENT */}
-      <main className="mx-auto max-w-[390px] px-4 py-4 space-y-6">
+    {/* CONTENT */}
+<main className="mx-auto max-w-[390px] px-4 py-4 space-y-3 bg-white">
 
-        {policyLevels.map((item) => (
-          <div key={item.level}>
-            {/* LEVEL TITLE */}
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-1.5 h-5 rounded bg-purple-600 shrink-0" />
-              <h2 className="text-sm font-semibold text-gray-800">
-                LEVEL: {item.level}
-              </h2>
-            </div>
+  {policyLevels.map((item) => (
+    <div
+      key={item.level}
+      className="
+        bg-white
+        border border-gray-200
+        rounded-xl
+        p-3
+        flex items-center gap-3
+      "
+    >
+      {/* LEVEL BADGE */}
+      <div
+        className="
+          w-12 h-12
+          rounded-full
+          bg-purple-100
+          text-purple-600
+          flex items-center justify-center
+          text-sm font-semibold
+          shrink-0
+        "
+      >
+        L{item.level}
+      </div>
 
-            {/* CARD */}
-            <div className="
-              bg-blue-50
-              rounded-2xl
-              px-3
-              py-3
-              grid
-              grid-cols-3
-              text-center
-              shadow-sm
-            ">
-              <div>
-                <p className="text-[11px] sm:text-xs text-gray-600">
-                  Time (Hours)
-                </p>
-                <p className="mt-1 text-emerald-500 text-sm font-semibold">
-                  {item.time}
-                </p>
-              </div>
+      {/* DETAILS */}
+      <div className="flex-1 grid grid-cols-3 gap-2 text-center">
+        <div>
+          <p className="text-[11px] text-gray-500">Time</p>
+          <p className="text-sm font-medium text-gray-900">
+            {item.time}h
+          </p>
+        </div>
 
-              <div>
-                <p className="text-[11px] sm:text-xs text-gray-600">
-                  Target (Gift)
-                </p>
-                <p className="mt-1 text-blue-600 text-sm font-semibold">
-                  {item.target.toLocaleString()}
-                </p>
-              </div>
+        <div>
+          <p className="text-[11px] text-gray-500">Target</p>
+          <p className="text-sm font-medium text-blue-600">
+            {item.target.toLocaleString()}
+          </p>
+        </div>
 
-              <div>
-                <p className="text-[11px] sm:text-xs text-gray-600">
-                  Host Salary
-                </p>
-                <p className="mt-1 text-orange-500 text-sm font-semibold">
-                  {item.salary}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
+        <div>
+          <p className="text-[11px] text-gray-500">Salary</p>
+          <p className="text-sm font-medium text-green-600">
+            ${item.salary}
+          </p>
+        </div>
+      </div>
+    </div>
+  ))}
 
-      </main>
+</main>
+
     </div>
   );
 }
