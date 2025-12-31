@@ -65,7 +65,7 @@ export default function Policy() {
       key={item.level}
       className="
         bg-white
-        border border-gray-200
+        shadow-md
         rounded-xl
         p-3
         flex items-center gap-3

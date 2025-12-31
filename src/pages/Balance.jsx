@@ -4,7 +4,7 @@ export default function Balance() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen w-full bg-[#f5f6fa] overflow-x-hidden">
+    <div className="min-h-screen w-full bg-white overflow-x-hidden">
 
       {/* HEADER – FULL WIDTH + SAFE AREA */}
       <header className="bg-linear-to-b from-[#161a3a] to-[#1e2352] text-white pt-[env(safe-area-inset-top)]">

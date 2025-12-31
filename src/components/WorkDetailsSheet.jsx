@@ -67,7 +67,7 @@ export default function WorkDetailsSheet({ open, onClose }) {
             transition: dragging ? "none" : "transform 0.25s ease",
             touchAction: "none",
           }}
-          className="w-full max-w-[390px] bg-white rounded-t-3xl p-4"
+          className="w-full max-w-97.5 bg-white rounded-t-3xl p-4"
         >
           {/* DRAG HANDLE */}
           <div
@@ -111,10 +111,10 @@ export default function WorkDetailsSheet({ open, onClose }) {
           {/* TABLE HEADER */}
           <div className="grid grid-cols-3 text-center rounded-xl overflow-hidden font-semibold">
             <div className="bg-gray-100 py-2">Date</div>
-            <div className="bg-gradient-to-r from-yellow-100 to-orange-200 py-2">
+            <div className="bg-linear-to-r from-yellow-100 to-orange-200 py-2">
               Duration
             </div>
-            <div className="bg-gradient-to-r from-emerald-400 to-emerald-600 text-white py-2">
+            <div className="bg-linear-to-r from-emerald-400 to-emerald-600 text-white py-2">
               Target
             </div>
           </div>
